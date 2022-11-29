@@ -4,3 +4,14 @@ Analyzing fMRI data using python
 ## Create conda environment
 
 `conda env create -f environment.yml`
+
+## Includes the course repo as submodule
+
+To clone the repo incl. the submodule run
+
+`git clone --recursive https://github.com/dominikpegler/tewa2-neuroimaging`
+
+
+To include the submodule afterwards run
+
+`git submodule update --init --recursive`

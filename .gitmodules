@@ -1,0 +1,3 @@
+[submodule "tewa-neuroimaging"]
+	path = tewa-neuroimaging
+	url = https://github.com/lrsktr/tewa-neuroimaging
