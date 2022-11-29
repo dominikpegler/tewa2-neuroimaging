@@ -15,3 +15,7 @@ To clone the repo incl. the submodule run
 To include the submodule afterwards run
 
 `git submodule update --init --recursive`
+
+To update the submodule run
+
+`git submodule update`
