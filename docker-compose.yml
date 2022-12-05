@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - http_proxy=${http_proxy}
+        - https_proxy=${https_proxy}
+    image: neuro-jupyter
+    hostname: neuro-jupyter
+    container_name: neuro-jupyter
+    volumes:
+       - .:/main
+    ports:
+      - "8890:8890"
+    restart: always
