@@ -50,4 +50,4 @@ RUN apt-get update -qq \
 
     WORKDIR /main
 
-    CMD ["jupyter", "lab", "--port=8890", "--ip=0.0.0.", "--allow-root", "--no-browser", "--LabApp.token=''"]
+    CMD ["jupyter", "lab", "--port=8890", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--ServerApp.token=''"]
