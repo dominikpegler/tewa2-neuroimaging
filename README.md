@@ -1,9 +1,6 @@
 # tewa2-neuroimaging
 Analyzing fMRI data using python
 
-## Create conda environment
-
-`conda env create -f environment.yml`
 
 ## Includes the course repo as submodule
 
@@ -20,7 +17,9 @@ To update the submodule run
 
 `git submodule update`
 
-## Open the notebooks on your local machine in a docker environment including FSL 5.0
+## Open the notebooks on your local machine
+
+The following command builds and starts a containerized jupyter environment including FSL 5.0
 
 `docker-compose up`
 
