@@ -39,6 +39,7 @@ RUN apt-get update -qq \
            sudo \
            wget \
            graphviz \
+           tree \
     && rm -rf /var/lib/apt/lists/* \
     && echo "Downloading FSL (this can take some time) ..." \
     && mkdir -p /opt/fsl-5.0.11 \
