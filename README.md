@@ -19,3 +19,9 @@ To include the submodule afterwards run
 To update the submodule run
 
 `git submodule update`
+
+## Open the notebooks on your local machine in a docker environment including FSL 5.0
+
+`docker-compose up`
+
+Open `localhost:8890` in your browser
