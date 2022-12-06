@@ -6,7 +6,7 @@ RUN pip install --no-cache-dir --upgrade -r /tmp/requirements.txt
 
 ENV FSLDIR="/opt/fsl-5.0.11" \
     PATH="/opt/fsl-5.0.11/bin:$PATH" \
-    FSLOUTPUTTYPE="NIFTI_GZ" \
+    FSLOUTPUTTYPE="NIFTI" \
     FSLMULTIFILEQUIT="TRUE" \
     FSLTCLSH="/opt/fsl-5.0.11/bin/fsltclsh" \
     FSLWISH="/opt/fsl-5.0.11/bin/fslwish" \
