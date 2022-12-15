@@ -4,6 +4,7 @@ COPY requirements.txt /tmp
 
 RUN pip install --no-cache-dir --upgrade -r /tmp/requirements.txt
 
+
 ENV FSLDIR="/opt/fsl-5.0.11" \
     PATH="/opt/fsl-5.0.11/bin:$PATH" \
     FSLOUTPUTTYPE="NIFTI" \
@@ -13,7 +14,9 @@ ENV FSLDIR="/opt/fsl-5.0.11" \
     FSLLOCKDIR="" \
     FSLMACHINELIST="" \
     FSLREMOTECALL="" \
-    FSLGECUDAQ="cuda.q"
+    FSLGECUDAQ="cuda.q" \
+    LD_LIBRARY_PATH="/opt/fsl-5.0.11/bin/FSLeyes:$LD_LIBRARY_PATH" 
+
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
            bc \
@@ -64,7 +67,7 @@ RUN apt-get update -qq \
     # Install SPM Standalone in /opt/spm12/
     ENV SPM_VERSION 12
     ENV SPM_REVISION r7771
-    ENV LD_LIBRARY_PATH /opt/mcr/${MCR_VERSION}/runtime/glnxa64:/opt/mcr/${MCR_VERSION}/bin/glnxa64:/opt/mcr/${MCR_VERSION}/sys/os/glnxa64:/opt/mcr/${MCR_VERSION}/sys/opengl/lib/glnxa64:/opt/mcr/${MCR_VERSION}/extern/bin/glnxa64
+    ENV LD_LIBRARY_PATH /opt/mcr/${MCR_VERSION}/runtime/glnxa64:/opt/mcr/${MCR_VERSION}/bin/glnxa64:/opt/mcr/${MCR_VERSION}/sys/os/glnxa64:/opt/mcr/${MCR_VERSION}/sys/opengl/lib/glnxa64:/opt/mcr/${MCR_VERSION}/extern/bin/glnxa64:${LD_LIBRARY_PATH}
     ENV MCR_INHIBIT_CTF_LOCK 1
     ENV SPM_HTML_BROWSER 0
     # Running SPM once with "function exit" tests the succesfull installation *and*
