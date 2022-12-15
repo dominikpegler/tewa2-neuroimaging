@@ -14,8 +14,7 @@ ENV FSLDIR="/opt/fsl-5.0.11" \
     FSLLOCKDIR="" \
     FSLMACHINELIST="" \
     FSLREMOTECALL="" \
-    FSLGECUDAQ="cuda.q" \
-    LD_LIBRARY_PATH="/opt/fsl-5.0.11/bin/FSLeyes:$LD_LIBRARY_PATH" 
+    FSLGECUDAQ="cuda.q" 
 
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
@@ -79,6 +78,10 @@ RUN apt-get update -qq \
     && rm -f /opt/spm${SPM_VERSION}_${SPM_REVISION}_Linux_${MATLAB_VERSION}.zip \
     && /opt/spm${SPM_VERSION}/spm${SPM_VERSION} function exit \
     && chmod +x /opt/spm${SPM_VERSION}/spm${SPM_VERSION}
+
+    # FSL to library PATH
+    ENV LD_LIBRARY_PATH="/opt/fsl-5.0.11/bin/FSLeyes:$LD_LIBRARY_PATH" 
+
 
     EXPOSE 8890
 
