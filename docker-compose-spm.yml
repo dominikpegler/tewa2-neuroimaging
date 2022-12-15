@@ -5,18 +5,18 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.spm
       args:
         - http_proxy=${http_proxy}
         - https_proxy=${https_proxy}
-    image: neuro-jupyter
-    command: sh -c "jupyter lab --port=8890 --ip=0.0.0.0 --allow-root --no-browser --ServerApp.token=''"
-    hostname: neuro-jupyter
-    container_name: neuro-jupyter
+    image: spm-jupyter
+    command: sh -c "jupyter lab --port=8899 --ip=0.0.0.0 --allow-root --no-browser --ServerApp.token=''"
+    hostname: spm-jupyter
+    container_name: spm-jupyter
     volumes:
        - .:/main
     environment:
       - JUPYTER_CONFIG_DIR=/main/.jupyter
     ports:
-      - "8890:8890"
+      - "8899:8899"
     restart: always
