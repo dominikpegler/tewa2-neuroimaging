@@ -80,7 +80,7 @@ RUN apt-get update -qq \
     && chmod +x /opt/spm${SPM_VERSION}/spm${SPM_VERSION}
 
     # FSL to library PATH
-    ENV LD_LIBRARY_PATH="/opt/fsl-5.0.11/bin/FSLeyes:$LD_LIBRARY_PATH" 
+    ENV LD_LIBRARY_PATH="" 
 
 
     EXPOSE 8890
