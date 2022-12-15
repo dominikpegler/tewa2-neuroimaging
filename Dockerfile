@@ -41,13 +41,13 @@ RUN apt-get update -qq \
            graphviz \
            tree \
            unzip \
-    && rm -rf /var/lib/apt/lists/* 
-  #  && echo "Downloading FSL (this can take some time) ..." \
-  #  && mkdir -p /opt/fsl-5.0.11 \
-  #  && curl -fL https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-5.0.11-centos6_64.tar.gz \
-  #  | tar -xz -C /opt/fsl-5.0.11 --strip-components 1 \
-  #  && echo "Installing FSL conda environment (this can take some time) ..." \
-  #  && bash /opt/fsl-5.0.11/etc/fslconf/fslpython_install.sh -f /opt/fsl-5.0.11
+    && rm -rf /var/lib/apt/lists/* \
+    && echo "Downloading FSL (this can take some time) ..." \
+    && mkdir -p /opt/fsl-5.0.11 \
+    && curl -fL https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-5.0.11-centos6_64.tar.gz \
+    | tar -xz -C /opt/fsl-5.0.11 --strip-components 1 \
+    && echo "Installing FSL conda environment (this can take some time) ..." \
+    && bash /opt/fsl-5.0.11/etc/fslconf/fslpython_install.sh -f /opt/fsl-5.0.11
 
     # Install MATLAB MCR in /opt/mcr/
     ENV MATLAB_VERSION="R2019b"
