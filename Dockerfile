@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # ubuntu 22.04 comes with Python 3.10
 
-COPY requirements-spm.txt /tmp
+COPY requirements.txt /tmp
 
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
@@ -39,7 +39,7 @@ RUN apt-get update -qq \
      /var/lib/apt/lists/* \
      /var/log/apt/term*
 
-RUN pip3 install --no-cache-dir --upgrade -r /tmp/requirements-spm.txt
+RUN pip3 install --no-cache-dir --upgrade -r /tmp/requirements.txt
 
 # SPM PART
 
@@ -92,6 +92,8 @@ RUN echo "Downloading FSL (this can take some time) ..." \
     | tar -xz -C /opt/fsl-5.0.11 --strip-components 1 \
     && echo "Installing FSL conda environment (this can take some time) ..." \
     && bash /opt/fsl-5.0.11/etc/fslconf/fslpython_install.sh -f /opt/fsl-5.0.11
+
+ENV LD_LIBRARY_PATH=""
 
 EXPOSE 8890
 
