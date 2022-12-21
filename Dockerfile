@@ -26,6 +26,8 @@ RUN apt-get update -qq \
     libxrandr2 \
     libxrender1 \
     libxt6 \
+    git \
+    vim \
     nano \
     sudo \
     wget \
