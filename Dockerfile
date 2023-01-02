@@ -27,6 +27,7 @@ RUN apt-get update -qq \
     libxrender1 \
     libxt6 \
     git \
+    git-annex \
     vim \
     nano \
     sudo \

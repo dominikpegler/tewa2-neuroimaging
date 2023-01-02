@@ -11,3 +11,5 @@ seaborn==0.12.1
 JLdracula==0.1.0
 openpyxl==3.0.10
 nltools==0.4.7
+datalad==0.18.0
+pybids==0.15.5
