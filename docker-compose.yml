@@ -20,3 +20,8 @@ services:
     ports:
       - "8890:8890"
     restart: always
+
+networks:
+  default:
+    external:
+      name: your-network
