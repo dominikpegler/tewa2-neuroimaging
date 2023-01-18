@@ -22,6 +22,7 @@ services:
     restart: always
 
 networks:
-  default:
-    external:
-      name: your-network
+    default:
+      external: 
+        name: your-network
+
